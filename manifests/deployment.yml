@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: shelkedeploytoaks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shelkedeploytoaks
+  template:
+    metadata:
+      labels:
+        app: shelkedeploytoaks 
+    spec:
+      containers:
+        - name: shelkedeploytoaks 
+          image: dockeraz.azurecr.io/shelkedeploytoaks
+          ports:
+          - containerPort: 80
